@@ -53,6 +53,11 @@
     renderDashboard();
   });
   document.getElementById('homeBtn').addEventListener('click', renderDashboard);
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    if (!confirm('Reset all progress and restart from the beginning?')) return;
+    localStorage.removeItem('scoutDecoderState');
+    location.reload();
+  });
   audioBtn.addEventListener('click', () => {
     audioEnabled = !audioEnabled;
     saveState(); setAudioLabel();
