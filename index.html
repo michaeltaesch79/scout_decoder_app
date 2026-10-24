@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11161b" />
+  <title>Scout Regiment — Secure Terminal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <audio id="bgm" loop preload="auto"></audio>
+  <audio id="sfxVerified" preload="auto"></audio>
+  <audio id="sfxRejected" preload="auto"></audio>
+  <audio id="sfxFinale" preload="auto"></audio>
+
+  <div id="app">
+    <section id="directiveScreen" class="screen directive-screen active">
+      <div class="directive-art" aria-hidden="true"></div>
+      <div class="directive-shade"></div>
+      <div class="directive-content">
+        <div class="eyebrow">SCOUT REGIMENT — HEADQUARTERS</div>
+        <h1>EMERGENCY<br><span>DIRECTIVE</span></h1>
+        <p class="classified">RESTRICTED // CADET <span data-cadet>KYLIAN</span></p>
+        <p class="directive-copy">Five operations have been authorized. Recover the intelligence. Verify each transmission. Preserve everything.</p>
+        <button id="beginBtn" class="primary-btn">BEGIN OPERATION</button>
+        <p class="interaction-note">Audio begins after authorization.</p>
+      </div>
+    </section>
+
+    <section id="terminalScreen" class="screen terminal-screen">
+      <header class="topbar">
+        <button id="homeBtn" class="crest-button" aria-label="Mission index">✦</button>
+        <div class="topbar-copy">
+          <div class="eyebrow">SCOUT REGIMENT // SECURE TERMINAL</div>
+          <strong>CADET <span data-cadet>KYLIAN</span></strong>
+        </div>
+        <button id="audioBtn" class="utility-btn" aria-label="Toggle audio">♫ AUDIO</button>
+      </header>
+
+      <main id="mainContent"></main>
+
+      <footer class="footerbar">
+        <span>HEADQUARTERS SECURE NETWORK</span>
+        <span id="statusText">STATUS: OPERATION ACTIVE</span>
+      </footer>
+    </section>
+  </div>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="modalClose" class="modal-close" aria-label="Close">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
