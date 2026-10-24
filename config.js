@@ -8,7 +8,7 @@
 */
 window.GAME_CONFIG = {
   cadetName: "KYLIAN",
-  squadName: "KYLIAN & SQUAD",
+  squadName: "KYLIAN & FAMILY",
   finalCode: "SAMEV",
 
   audio: {
