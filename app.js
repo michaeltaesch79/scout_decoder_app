@@ -252,7 +252,7 @@
           <div class="final-copy">
             <div class="eyebrow">SCOUT REGIMENT // FINAL CONFIRMATION</div>
             <h2>OPERATION<br><span>COMPLETE</span></h2>
-            <p>All five directives have been verified. Headquarters confirms that the operation was a success.</p>
+            <p>All five directives have been verified. Headquarters confirms that the operation was a success. Your presents are where cars are supposed to be !</p>
             <h3 style="font-size:clamp(2rem,5vw,4rem);margin:1.4rem 0 .4rem">HAPPY BIRTHDAY, ${cfg.cadetName}!</h3>
             <p class="final-motto">FOR THE GLORY OF HUMANITY.</p>
             <button class="secondary-btn" id="returnBtn">VIEW OPERATIONS LOG</button>
