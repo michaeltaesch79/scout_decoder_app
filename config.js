@@ -15,15 +15,15 @@ window.GAME_CONFIG = {
     ambient: "audio/ambient.mp3",
     verified: "audio/verified.mp3",
     rejected: "audio/rejected.mp3",
-    finale: "audio/finale.mp3"
+    birthday: "audio/happy-birthday.mp3"
   },
 
   mission2RecoveredHeadings: [
     // Replace these four entries once the Mission 4 compass headings are locked.
-    "Coordinate 1 — [SET HEADING]",
-    "Coordinate 2 — [SET HEADING]",
-    "Coordinate 3 — [SET HEADING]",
-    "Coordinate 4 — [SET HEADING]"
+    "SE 150 DEG",
+    "SW 245 DEG",
+    "NE 32 DEG",
+    "NW 315 DEG"
   ],
 
   missions: [
@@ -42,7 +42,7 @@ window.GAME_CONFIG = {
         "Record the numbered checkpoints encountered on the valid route, in order."
       ],
       successTitle: "ROUTE VERIFIED",
-      successText: "The safe route has been confirmed. Headquarters has authorized Mission 02."
+      successText: "The safe route has been confirmed. Headquarters has authorized Mission 02.<br>You may proceed downstairs where the windows open to the road on the side and the screen lets you live your dream."
     },
     {
       id: 2,
@@ -59,8 +59,7 @@ window.GAME_CONFIG = {
         "Follow the intelligence chain: named Titan → flare confirmation → usable bridge → Extraction status. Then turn over the four genuine reports in chronological order."
       ],
       successTitle: "INTELLIGENCE VERIFIED",
-      successText: "The four authentic Scout reports have been confirmed. Headquarters has authorized Mission 03.",
-      specialSuccess: "mission2Headings"
+      successText: "The four authentic Scout reports have been confirmed. Headquarters has authorized Mission 03.<br>You may proceed to a place where you will be warmer in the winter"
     },
     {
       id: 3,
@@ -77,7 +76,8 @@ window.GAME_CONFIG = {
         "Once the placement is correct, trust the blade. Record Signal Fragments 01 through 04 in order."
       ],
       successTitle: "TRANSMISSION RESTORED",
-      successText: "All four signal fragments have been restored. Headquarters has authorized Mission 04."
+      successText: "All four signal fragments have been restored. Headquarters has authorized Mission 04.",
+      specialSuccess: "recoveredHeadings"
     },
     {
       id: 4,
@@ -85,13 +85,13 @@ window.GAME_CONFIG = {
       title: "THE BREACHED DISTRICT",
       subtitle: "Wall Defense",
       image: "assets/images/mission-04.png",
-      code: 1234,
+      code: "0324",
       inputType: "numeric",
       transmission: "Reconstruct the damaged district defense map. When the reconstruction is complete, locate the correct numbers on the district map and transmit them in tower order.",
       hints: [
         "The words ‘locate the correct numbers’ were highlighted for a reason.",
         "Something supplied with Mission 04 is designed to determine direction.",
-        "Align the center symbol of the transparent compass with the matching symbol at each watchtower. Use the directional readings recovered after Mission 02; the first number on each heading is true."
+        "Align the center symbol of the transparent compass with the matching symbol at each watchtower. Use the directional readings recovered after Mission 03; the first number on each heading is true."
       ],
       successTitle: "DEFENSE MAP VERIFIED",
       successText: "The four watchtower signals have been confirmed. Headquarters has authorized the final mission."

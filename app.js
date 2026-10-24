@@ -8,7 +8,7 @@
   const bgm = document.getElementById('bgm');
   const sfxVerified = document.getElementById('sfxVerified');
   const sfxRejected = document.getElementById('sfxRejected');
-  const sfxFinale = document.getElementById('sfxFinale');
+  const sfxBirthday = document.getElementById('sfxBirthday');
   const audioBtn = document.getElementById('audioBtn');
   const isDev = new URLSearchParams(location.search).get('dev') === '1';
 
@@ -16,7 +16,7 @@
   bgm.src = cfg.audio.ambient;
   sfxVerified.src = cfg.audio.verified;
   sfxRejected.src = cfg.audio.rejected;
-  sfxFinale.src = cfg.audio.finale;
+  sfxBirthday.src = cfg.audio.birthday;
 
   const state = loadState();
   let activeMission = null;
@@ -197,10 +197,10 @@
     state.completed.sort((a,b)=>a-b);
     saveState();
     if (m.specialSuccess === 'finale') {
-      bgm.pause(); safePlay(sfxFinale); renderFinale(); return;
+      bgm.pause(); safePlay(sfxBirthday); renderFinale(); return;
     }
     safePlay(sfxVerified);
-    if (m.specialSuccess === 'mission2Headings') showMission2Success(m);
+    if (m.specialSuccess === 'recoveredHeadings') showRecoveredHeadingsSuccess(m);
     else showSuccess(m);
   }
 
@@ -215,16 +215,16 @@
     document.getElementById('continueBtn').addEventListener('click',()=>{ closeModal(); renderDashboard(); });
   }
 
-  function showMission2Success(m) {
+  function showRecoveredHeadingsSuccess(m) {
     modalBody.innerHTML = `
       <div class="eyebrow" style="color:#7b6240">INTELLIGENCE DIVISION // VERIFIED</div>
       <div class="modal-heading">TRANSMISSION<br><span style="color:#8d2527">VERIFIED</span></div>
-      <p class="modal-copy">The four authentic Scout reports have been confirmed.</p>
+      <h3>${m.successTitle}</h3>
       <p class="modal-copy"><strong>During verification, Intelligence Division recovered four unidentified directional readings from the patrol data. Their purpose is currently unknown.</strong></p>
       <p class="modal-copy"><strong>RECORD THEM. DO NOT DISCARD THEM.</strong></p>
       <div class="heading-list">${cfg.mission2RecoveredHeadings.map(h=>`<div>${h}</div>`).join('')}</div>
       <p>${m.successText}</p>
-      <button class="primary-btn" id="continueBtn">AUTHORIZE MISSION 03</button>`;
+      <button class="primary-btn" id="continueBtn">CONTINUE OPERATION</button>`;
     openModal();
     document.getElementById('continueBtn').addEventListener('click',()=>{ closeModal(); renderDashboard(); });
   }
